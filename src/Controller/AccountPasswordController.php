@@ -27,6 +27,8 @@ class AccountPasswordController extends AbstractController
     {
         $user = $this->getUser();
         $form = $this->createForm(ChangepasswordType::class, $user);
+        $notification = null;
+
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $old_pwd = $form->get('old_password')->getData();
@@ -47,7 +49,7 @@ class AccountPasswordController extends AbstractController
         }
         return $this->render('account/password.html.twig', [
             'form' => $form->createView(),
-        //     'notification' => $notification
+            'notification' => $notification
          ]);
     }
 }
