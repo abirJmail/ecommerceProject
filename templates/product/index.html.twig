@@ -11,13 +11,14 @@
         <div class="col-md-9">
             <h3>Nos produits</h3>
 
-            {# <div class="row product-container">
+            <div class="row product-container">
                 {% for product in products %}
                     <div class="col-md-4">
                         {% include 'product/single_product.html.twig' %}
+                        {# {{dump(product)}} #}
                     </div>
                 {% endfor %}
-            </div> #}
+            </div>
         </div>
     </div>
 {% endblock %}
