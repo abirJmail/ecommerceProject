@@ -23,7 +23,7 @@ class CartController extends AbstractController
     #[Route('/mon-panier', name: 'cart')]
     public function index(Cart $cart)
     {
-        dd($cart->get());
+        // dd($cart->get());
         return $this->render('cart/index.html.twig', [
             'cart' => $cart->getFull()
         ]);
@@ -57,25 +57,25 @@ class CartController extends AbstractController
     //  * Route("/cart/delete/{id}", name="delete_to_cart")
     //  */
 
-    // #[Route('/cart/delete/{id}', name: 'delete_to_cart')]
-    // public function delete(Cart $cart, $id)
-    // {
-    //     $cart->delete($id);
+    #[Route('/cart/delete/{id}', name: 'delete_to_cart')]
+    public function delete(Cart $cart, $id)
+    {
+        $cart->delete($id);
 
-    //     return $this->redirectToRoute('cart');
-    // }
+        return $this->redirectToRoute('cart');
+    }
 
     // /**
     //  * Route("/cart/decrease/{id}", name="decrease_to_cart")
     //  */
 
-    // #[Route('/cart/decrease/{id}', name: 'decrease_to_cart')]
-    // public function decrease(Cart $cart, $id)
-    // {
-    //     $cart->decrease($id);
+    #[Route('/cart/decrease/{id}', name: 'decrease_to_cart')]
+    public function decrease(Cart $cart, $id)
+    {
+        $cart->decrease($id);
 
-    //     return $this->redirectToRoute('cart');
-    // }
+        return $this->redirectToRoute('cart');
+    }
 }
 
 // <?php
