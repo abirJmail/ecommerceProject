@@ -6,17 +6,26 @@ use App\Entity\Carrier;
 use App\Entity\Product;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 class Cart
 {
     private $session;
     private $entityManager;
+     private $requestStack;
 
-    public function __construct(EntityManagerInterface $entityManager, SessionInterface $session)
-    {
-        $this->session = $session;
-        $this->entityManager = $entityManager;
-    }
+    public function __construct(EntityManagerInterface $entityManager, RequestStack $requestStack)
+{
+    $this->requestStack = $requestStack;
+    $session = $this->requestStack->getSession();
+    $this->session = $session;
+    $this->entityManager = $entityManager;
+}
+    // public function __construct(EntityManagerInterface $entityManager, SessionInterface $session,RequestStack $requestStack)
+    // {
+    //     $this->session = $session;
+    //     $this->entityManager = $entityManager;
+    // }
 
     public function add($id)
     {
