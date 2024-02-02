@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Classe\Cart;
 use App\Entity\Order;
+use DateTimeImmutable;
 use App\Form\OrderType;
 use App\Entity\OrderDetails;
 use Doctrine\ORM\EntityManagerInterface;
@@ -67,7 +68,8 @@ public function add(Cart $cart, Request $request)
         $carriers = $form->get('carriers')->getData();
 
         $delivery = $form->get('addresses')->getData();
-        $delivery_content = $delivery->getFirstname().' '.$delivery->getLastname();
+        $delivery_content = $delivery->getFirstname();
+        // $delivery_content = $delivery->getFirstname().' '.$delivery->getLastname();
         $delivery_content .= '<br/>'.$delivery->getPhone();
 
         if ($delivery->getCompany()) {
@@ -83,7 +85,8 @@ public function add(Cart $cart, Request $request)
         $reference = $date->format('dmY').'-'.uniqid();
         // $order->setReference($reference);
         $order->setUser($this->getUser());
-        $order->setCreatedAt($date);
+        // $order->setCreatedAt($date);
+        $order->setCreatedAt(new DateTimeImmutable());
         $order->setCarrierName($carriers->getName());
         $order->setCarrierPrice($carriers->getPrice());
         $order->setDelivery($delivery_content);
