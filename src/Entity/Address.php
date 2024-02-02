@@ -23,6 +23,9 @@ class Address
     #[ORM\Column(length: 255)]
     private ?string $firstname = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $lastname = null;
+
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $company = null;
 
@@ -81,6 +84,19 @@ class Address
 
         return $this;
     }
+
+    public function getLastname(): ?string
+    {
+        return $this->lastname;
+    }
+
+    public function setLastname(string $lastname): self
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
+
 
     public function getCompany(): ?string
     {
