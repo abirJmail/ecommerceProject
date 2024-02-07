@@ -134,6 +134,9 @@ class StripeController extends AbstractController
         if (!$order) {
             return $this->redirect($session->error, 303);
              }
+$order->setStripeSessionId($session->id);
+$entityManager->flush();
+
         return $this->redirect($session->url, 303);
     }
 
