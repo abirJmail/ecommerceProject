@@ -33,7 +33,7 @@ if (!$order || $order->getUser()!= $this->getUser()) {
         
         if ($order->isIsPaid() == 0) {
             // Vider la session "cart"
-            // $cart->remove();
+            $cart->remove();
 
             // Modifier le statut isPaid de notre commande en mettant 1
             $order->isIsPaid(1);
