@@ -73,7 +73,8 @@ class RegisterController extends AbstractController
 
         $mailer->send($email);
 
-            $notification = "Votre inscription s'est correctement déroulée. Vous pouvez dès à présent vous connecter à votre compte.";
+            // $notification = "Votre inscription s'est correctement déroulée. Vous pouvez dès à présent vous connecter à votre compte.";
+            return $this->redirectToRoute('app_home');
         } else {
             $notification = "L'email que vous avez renseigné existe déjà.";
         }
