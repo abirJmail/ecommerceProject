@@ -34,10 +34,6 @@
 </head>
 <body>
 <header>
-    {# {% if notification %}
-        <div class="alert alert-info">{{ notification }}</div>
-        <hr>
-    {% endif %} #}
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="{{ path('app_home') }}">Turquesa Joaillerie</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,12 +70,12 @@
     {% if block('carousel') is defined %}
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-            {# {% for key,header in headers %}
-                <li data-target="#myCarousel" data-slide-to="{{ key }}" {% if key == 0 %}class="active"{% endif %}></li> #}
-            {# {% endfor %} #}
+             {% for key,header in headers %}
+                <li data-target="#myCarousel" data-slide-to="{{ key }}" {% if key == 0 %}class="active"{% endif %}></li> 
+             {% endfor %} 
         </ol>
         <div class="carousel-inner">
-            {# {% for key,header in headers %}
+             {% for key,header in headers %}
             <div class="carousel-item {% if key == 0 %}active{% endif %}" style="background: url('/uploads/{{ header.illustration }}');background-size:cover;">
                 <div class="container">
                     <div class="carousel-caption text-left">
@@ -89,7 +85,7 @@
                     </div>
                 </div>
             </div>
-            {% endfor %} #}
+            {% endfor %} 
         </div>
         <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
