@@ -17,8 +17,10 @@ class ContactController extends AbstractController
     {
         $form = $this->createForm(ContactType::class);
         $form-> handleRequest($request);
-       
+
+
         if($form->isSubmitted() && $form ->isValid()){
+
            $adress = $form->get('email')->getData();
            $subject = $form->get('subject')->getData();
            $content = $form->get('content')->getData();
@@ -30,7 +32,8 @@ class ContactController extends AbstractController
            ->text($content);
 
            $mailer->send($email);
-           return $this->redirectToRoute('app_home');
+        //    return $this->redirectToRoute('app_home');
+           $this->addFlash('notice', 'Merci de nous avoir contacté. Notre équipe va vous répondre dans les meilleurs délais.');
 
         }
         return $this->render('contact/index.html.twig', [

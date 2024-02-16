@@ -8,11 +8,14 @@
 <div class="loginHome rect">
 <h3>N'HÉSITEZ PAS À</h3>
 <h1>NOUS CONTACTER</h1>
+  <p>N'hésitez pas à prendre contact avec notre équipe, nous vous répondrons dans les meilleurs délais.</p>
+      {% for message in app.flashes('notice') %}
+        <div class="alert alert-info">{{ message }}</div>
+    {% endfor %}
 <div>
 {{form(form)}}
 </div>
 </div>
 </div>
 {% endblock %}
-
 
