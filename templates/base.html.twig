@@ -39,47 +39,12 @@
 		<link href="{{ asset('assets/css/carousel.css') }}" rel="stylesheet">
 	</head>
 	<body>
-		{# <header>
-															<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-																<a class="navbar-brand" href="{{ path('app_home') }}">Turquesa Joaillerie</a>
-																<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-																	<span class="navbar-toggler-icon"></span>
-																</button>
-																<div class="collapse navbar-collapse" id="navbarCollapse">
-																	<ul class="navbar-nav mr-auto">
-																		<li class="nav-item active">
-																			<a class="nav-link" href="{{ path('app_product') }}">Nos produits </a>
-																		</li>
-																		<li class="nav-item active">
-																			<a class="nav-link" href="#">Qui sommes-nous ?</a>
-																		</li>
-																		<li class="nav-item active">
-																			<a class="nav-link" href="{{ path('app_contact') }}">Contact nous</a>
-																		</li>
-																	</ul>
-																	<div class="navbar-item-custom">
-																		{% if app.user %}
-																			<a href="{{ path('app_account') }}">Mon compte
-																				<small>({{ app.user.firstname }})</small>
-																			</a>
-																			|
-																			<a href="{{ path('app_logout') }}">Déconnexion</a>
-																		{% else %}
-																			<a href="{{ path('app_login') }}">Connexion</a>
-																			|
-																			<a href="{{ path('app_register') }}">Inscription</a>
-																		{% endif %}
-																	</div>
-																	<a href="{{ path('cart') }}">
-																		<img src="{{ asset('assets/img/shopping-cart.png') }}" class="cart-icon" alt="Mon panier">
-																	</a>
-																</div>
-															</nav>
-														</header> #}
-
 		<header>
-			<nav class="navbar navbar-expand-md   ">
+			<nav class="navbar navbar-expand-md navbar-dark fixed-top ">
 				<a class="navbar-brand" href="{{ path('app_home') }}">TURQUESA Joaillerie</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item active">
@@ -132,13 +97,13 @@
 					</ol>
 					<div class="carousel-inner">
 						{% for key,header in headers %}
-							<div class="carousel-item {% if key == 0 %}active{% endif %}" style="background: url('/uploads/{{ header.illustration }}');background-repeat: no-repeat;  background-size: cover;} ">
+							<div class="carousel-item {% if key == 0 %}active{% endif %}" style="background: url('/uploads/{{ header.illustration }}');background-repeat: no-repeat;    background-size: cover;} ">
 								<div class="container">
 									<div class="carousel-caption text-left ">
 										<h1>{{ header.title }}</h1>
 										<p>{{ header.content }}</p>
 										<p class="text-right">
-											<a class="btn btn-lg  w-50" href="{{ header.btnUrl }}" role="button">{{ header.btnTitle }}</a>
+											<a class="btn btn-lg headerBtnTitle   w-50" href="{{ header.btnUrl }}" role="button">{{ header.btnTitle }}</a>
 										</p>
 										<div class="imgs-header">
 											<img src="{{ asset('assets/img/header1.jpg') }}" class="img-header" alt="pierres">
@@ -161,8 +126,7 @@
 				</div>
 			{% endif %}
 
-			<!-- Marketing messaging and featurettes
-																											    ================================================== -->
+			<!-- Marketing messaging and featurettes ================================================== -->
 			<!-- Wrap the rest of the page in another container to center all the content. -->
 
 			<div class="container marketing {% if block('carousel') is not defined %}mt-5{% endif %}"> {% block content %}{% endblock %}
@@ -171,7 +135,54 @@
 				<!-- /.container -->
 
 				<!-- FOOTER -->
-				<footer class="footer-custom">
+<footer>
+	<div class="footer">
+		<div class="footer-container">
+			<div class="footer--adress">
+				<a href="{{path('app_home')}}">
+					<h2></h2>TURQUEZA JOAILLERIE</a>
+				<p>Lorem ipsum dolor sit amet, consectetur .</p>
+				<p>05-555-555-55</p>
+			</div>
+            <div >
+                    {% for category in categorys %}
+            <div class="col-md-3">
+                <h3>{{ category.name }}</h3>
+            </div>
+        {% endfor %}
+</div >
+			{# <div class="footer--newsletter">
+				<h6>Commençons l’aventure ensemble...</h6>
+				<div>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				</div>
+				<form class="d-flex Form" role="search" action="" method="GET">
+					<input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-light w-75 " type="submit">chercher</button>
+				</form>
+			</div> #}
+			<div class="footer--social">
+				<h6>Suivez-nous</h6>
+				<ul class="footerSocialUl ">
+					<li class="footerSocialLi ">FACEBOOK</li>
+					<li class="footerSocialLi">INSTAGRAM</li>
+					<li class="footerSocialLi">LINKDIN</li>
+				</ul>
+
+			</div>
+		</>
+
+		<p class="text-center ">&copy;
+			{{ 'now'|date('Y') }}
+			TUNISIA CAMPERS.Tous droits réservés.</p>
+	</div>
+</footer>
+
+
+				{# <footer class="footer-custom">
+                <h2></h2>
 					<p>
 						&copy; 2017-2020 La Boutique Française<br/>
 						<small>La boutique 100% made in France<br/>
@@ -180,7 +191,7 @@
 							<a href="#">Terms</a>
 						</small>
 					</p>
-				</footer>
+				</footer> #}
 			</main>
 			<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 			<script src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
