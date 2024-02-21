@@ -3,43 +3,52 @@
 {% block carousel %}{% endblock %}
 
 {% block content %}
-    <!-- Three columns of text below the carousel -->
-    <h3>Nos meilleures ventes</h3>
-    <p>Découvrez les articles les plus vendus.</p>
-    <div class="row">
-        {% for product in products %}
-            <div class="col-md-3">
-                {% include 'product/single_product.html.twig' %}
-            </div>
-        {% endfor %}
-    </div><!-- /.row -->
-
-
-    <!-- START THE FEATURETTES -->
-
+	<h2 class="title">Nos meilleures ventes</h2>
     <hr class="featurette-divider">
+	<div class="isBest ">
+			<img class=" isBestIMG " src="/uploads/{{ products[0].illustration }}" alt="{{ products[0].name }}" class="img-fluid">
+		<div class="  isBestproduct row">
+			<p>Découvrez les articles les plus vendus.</p>
+            <p>Chaque bijou est unique et ne ressemble à aucun autre, que ce soit par son origine et son design.</p>
+			<div class=" isBestrow">
+				{% for product in products|slice(1, 2) %}
+					{# {% for product in products %} #}
+					<div class="col-md-6">
+						{% include 'product/single_product.html.twig' %}
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<!-- START THE FEATURETTES -->
 
-    <div class="row featurette">
-        <div class="col-md-7">
-            <h2 class="featurette-heading">Une équipe de professionnel <span class="text-muted">au grand savoir-faire</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-            <img src="{{ asset('assets/img/first.jpg') }}" class="img-fluid" alt="Un savoir-faire Français">
-        </div>
-    </div>
+	<hr class="featurette-divider">
 
-    <hr class="featurette-divider">
+	<div class="row featurette">
+		<div class="col-md-7">
+			<h2 class="featurette-heading">Une équipe de professionnel
+				<span class="text-muted">au grand savoir-faire</span>
+			</h2>
+			<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+		</div>
+		<div class="col-md-5">
+			<img src="{{ asset('assets/img/first.jpg') }}" class="img-fluid" alt="Un savoir-faire Français">
+		</div>
+	</div>
 
-    <div class="row featurette">
-        <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Venez nous rencontrer dans nos <span class="text-muted">boutiques en France.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5 order-md-1">
-            <img src="{{ asset('assets/img/second.jpg') }}" class="img-fluid" alt="Une boutique ouverte toute l'année">
-        </div>
-    </div>
+	<hr class="featurette-divider">
 
-    <!-- /END THE FEATURETTES -->
+	<div class="row featurette">
+		<div class="col-md-7 order-md-2">
+			<h2 class="featurette-heading">Venez nous rencontrer dans nos
+				<span class="text-muted">boutiques en France.</span>
+			</h2>
+			<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+		</div>
+		<div class="col-md-5 order-md-1">
+			<img src="{{ asset('assets/img/second.jpg') }}" class="img-fluid" alt="Une boutique ouverte toute l'année">
+		</div>
+	</div>
+
+	<!-- /END THE FEATURETTES -->
 {% endblock %}
