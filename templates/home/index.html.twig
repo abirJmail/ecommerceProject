@@ -3,52 +3,96 @@
 {% block carousel %}{% endblock %}
 
 {% block content %}
-	<h2 class="title">Nos meilleures ventes</h2>
-    <hr class="featurette-divider">
-	<div class="isBest ">
+	<div class="best">
+		<h2 class="title">Nos meilleures ventes</h2>
+		<hr class="featurette-divider">
+		<div class="isBest ">
 			<img class=" isBestIMG " src="/uploads/{{ products[0].illustration }}" alt="{{ products[0].name }}" class="img-fluid">
-		<div class="  isBestproduct row">
-			<p>Découvrez les articles les plus vendus.</p>
-            <p>Chaque bijou est unique et ne ressemble à aucun autre, que ce soit par son origine et son design.</p>
-			<div class=" isBestrow">
-				{% for product in products|slice(1, 2) %}
-					{# {% for product in products %} #}
-					<div class="col-md-6">
-						{% include 'product/single_product.html.twig' %}
-					</div>
-				{% endfor %}
+			<div class="  isBestproduct row">
+				<p>Découvrez les articles les plus vendus.</p>
+				<p>Chaque bijou est unique et ne ressemble à aucun autre, que ce soit par son origine et son design.</p>
+				<div class=" isBestrow">
+					{% for product in products|slice(1, 2) %}
+						<div class="">
+							{% include 'product/single_product.html.twig' %}
+						</div>
+					{% endfor %}
+				</div>
 			</div>
+		</div>
+		<div class="row btnMarkiting">
+			<div class="hrBtn"></div>
+			<a class="btn btn-lg headerBtnTitle right " href="" role="button">voir tout</a>
+		</div>
+	</div>
+	<!-- les nouveautés -->
+	<div class="new">
+		<h2 class="title">les nouveautés</h2>
+		<hr class="featurette-divider">
+
+		<p class="text-center">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.</p>
+		<div class=" newInrow">
+			{% for product in products|reverse|slice(0, 4) %}
+				<div class="">
+					{% include 'product/single_product.html.twig' %}
+				</div>
+			{% endfor %}
+		</div>
+
+		<div class="row btnMarkiting">
+			<div class="hrBtn"></div>
+			<a class="btn btn-lg headerBtnTitle right " href="" role="button">voir tout</a>
+		</div>
+	</div>
+    	<!-- Nos Produits -->
+	<div class="produits">
+		<h2 class="title">Nos Produits</h2>
+		<hr class="featurette-divider">
+
+		<p class="text-center">Donec ullamcorper nulla non metus auctor fringilla. </p>
+		<div class=" produitsrow">
+			{% for product in products|slice(0, 5) %}
+				<div class="">
+					{% include 'product/single_product.html.twig' %}
+				</div>
+			{% endfor %}
 		</div>
 	</div>
 	<!-- START THE FEATURETTES -->
-
-	<hr class="featurette-divider">
-
-	<div class="row featurette">
-		<div class="col-md-7">
-			<h2 class="featurette-heading">Une équipe de professionnel
-				<span class="text-muted">au grand savoir-faire</span>
+	<div class="featurette ">
+		<div class="featuretteImg ">
+			<img src="{{ asset('assets/img/firstt.jpg') }}" class="img-fluid" alt="bijoutierre">
+		</div>
+		<div class="featurette-p">
+			<h2 class="featurette-heading">
+				<span class="text-muted">
+					la créativité
+				</span>est notre maître-mot
 			</h2>
 			<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-		</div>
-		<div class="col-md-5">
-			<img src="{{ asset('assets/img/first.jpg') }}" class="img-fluid" alt="Un savoir-faire Français">
+
+
 		</div>
 	</div>
-
-	<hr class="featurette-divider">
-
-	<div class="row featurette">
-		<div class="col-md-7 order-md-2">
+			<div class="row btnMarkiting">
+				<div class="hrBtn"></div>
+				<a class="btn btn-lg headerBtnTitle right " href="" role="button">voir tout</a>
+			</div>
+	<div class=" featurette">
+		<div class="featurette-p ">
 			<h2 class="featurette-heading">Venez nous rencontrer dans nos
 				<span class="text-muted">boutiques en France.</span>
 			</h2>
 			<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
 		</div>
-		<div class="col-md-5 order-md-1">
-			<img src="{{ asset('assets/img/second.jpg') }}" class="img-fluid" alt="Une boutique ouverte toute l'année">
+		<div class="featuretteImg ">
+			<img src="{{ asset('assets/img/secondd.jpg') }}" class="img-fluid" alt="Une boutique ouverte toute l'année">
 		</div>
 	</div>
-
+			<div class="row btnMarkiting">
+				<div class="hrBtn"></div>
+				<a class="btn btn-lg headerBtnTitle right " href="" role="button">voir tout</a>
+			</div>
+			</div>
 	<!-- /END THE FEATURETTES -->
 {% endblock %}
