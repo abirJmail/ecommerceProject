@@ -41,15 +41,16 @@
 
 		<div class="row btnMarkiting">
 			<div class="hrBtn"></div>
-			<a class="btn btn-lg headerBtnTitle right " href="" role="button">voir tout</a>
+			<a class="btn btn-lg headerBtnTitle right" href="" role="button">voir tout</a>
 		</div>
 	</div>
-    	<!-- Nos Produits -->
+	<!-- Nos Produits -->
 	<div class="produits">
 		<h2 class="title">Nos Produits</h2>
 		<hr class="featurette-divider">
 
-		<p class="text-center">Donec ullamcorper nulla non metus auctor fringilla. </p>
+		<p class="text-center">Donec ullamcorper nulla non metus auctor fringilla.
+		</p>
 		<div class=" produitsrow">
 			{% for product in products|slice(0, 5) %}
 				<div class="">
@@ -74,10 +75,10 @@
 
 		</div>
 	</div>
-			<div class="row btnMarkiting">
-				<div class="hrBtn"></div>
-				<a class="btn btn-lg headerBtnTitle right " href="" role="button">voir tout</a>
-			</div>
+	<div class="row btnMarkiting">
+		<div class="hrBtn"></div>
+		<a class="btn btn-lg headerBtnTitle right " href="" role="button">voir tout</a>
+	</div>
 	<div class=" featurette">
 		<div class="featurette-p ">
 			<h2 class="featurette-heading">Venez nous rencontrer dans nos
@@ -89,10 +90,9 @@
 			<img src="{{ asset('assets/img/secondd.jpg') }}" class="img-fluid" alt="Une boutique ouverte toute l'année">
 		</div>
 	</div>
-			<div class="row btnMarkiting">
-				<div class="hrBtn"></div>
-				<a class="btn btn-lg headerBtnTitle right " href="" role="button">voir tout</a>
-			</div>
-			</div>
-	<!-- /END THE FEATURETTES -->
-{% endblock %}
+	<div class="row btnMarkiting">
+		<div class="hrBtn"></div>
+		<a class="btn btn-lg headerBtnTitle right " href="" role="button">voir tout</a>
+	</div>
+</div>
+<!-- /END THE FEATURETTES -->{% endblock %}
