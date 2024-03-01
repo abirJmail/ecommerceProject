@@ -28,12 +28,12 @@ class AddressType extends AbstractType
                     'placeholder' => 'Entrez votre prénom'
                 ]
             ])
-            // ->add('lastname', TextType::class, [
-            //     'label' => 'Votre nom',
-            //     'attr' => [
-            //         'placeholder' => 'Entre votre nom'
-            //     ]
-            // ])
+            ->add('lastname', TextType::class, [
+                'label' => 'Votre nom',
+                'attr' => [
+                    'placeholder' => 'Entre votre nom'
+                ]
+            ])
             ->add('company', TextType::class, [
                 'label' => 'Votre société',
                 'required' => false,
