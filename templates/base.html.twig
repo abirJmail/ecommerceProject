@@ -14,6 +14,7 @@
 		<!-- Bootstrap core CSS -->
 		<link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
 		<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk&display=swap" rel="stylesheet">
@@ -103,7 +104,7 @@
 										<h1>{{ header.title }}</h1>
 										<p>{{ header.content }}</p>
 										<p class="text-right">
-											<a class="btn btn-lg headerBtnTitle  w-50" href="{{ header.btnUrl }}" role="button">{{ header.btnTitle }}</a>
+											<a class="btn btn-lg headerBtnTitle  w-50 animate__animated animate__flash animate__delay-2s	" href="{{ header.btnUrl }}" role="button">{{ header.btnTitle }}</a>
 										</p>
 										<div class="imgs-header">
 											<img src="{{ asset('assets/img/header1.jpg') }}" class="img-header" alt="pierres">
@@ -135,56 +136,58 @@
 				<!-- /.container -->
 
 				<!-- FOOTER -->
-<footer>
-	<div class="footer">
-		<div class="footer-container">
-			<div class="footer--adress">
-				<a class="link-dark" href="{{path('app_home')}}">
-					<h2>TURQUEZA JOAILLERIE</h2></a>
-				<p>Lorem ipsum dolor sit amet, consectetur .</p>
-				<p>05-555-555-55</p>
-			</div>
+				<footer>
+					<div class="footer">
+						<div class="footer-container">
+							<div class="footer--adress">
+								<a class="link-dark" href="{{path('app_home')}}">
+									<h2>TURQUEZA JOAILLERIE</h2>
+								</a>
+								<p>Lorem ipsum dolor sit amet, consectetur .</p>
+								<p>05-555-555-55</p>
+							</div>
 
-			<div class="footer--newsletter">
-				<h6>AIDE ET CONTACTS</h6>
-				<div>
-					<p>Notre service client est là pour vous du lundi au vendredi de 9h à 17h</p><p>
-*Cout d’un appel local selon votre opérateur</p>
-				</div>
-				<form class="d-flex Form" role="search" action="" method="GET">
-					<input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-light w-75 " type="submit">chercher</button>
-				</form>
-			</div>
-			<div class="footer--social">
-				<h6>SUIVEZ NOUS</h6>
-				<ul class="footerSocialUl ">
-					<li class="footerSocialLi ">FACEBOOK</li>
-					<li class="footerSocialLi">INSTAGRAM</li>
-					<li class="footerSocialLi">LINKDIN</li>
-				</ul>
+							<div class="footer--newsletter">
+								<h6>AIDE ET CONTACTS</h6>
+								<div>
+									<p>Notre service client est là pour vous du lundi au vendredi de 9h à 17h</p>
+									<p>
+										*Cout d’un appel local selon votre opérateur</p>
+								</div>
+								<form class="d-flex Form" role="search" action="" method="GET">
+									<input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search">
+									<button class="btn btn-outline-light w-75 " type="submit">chercher</button>
+								</form>
+							</div>
+							<div class="footer--social">
+								<h6>SUIVEZ NOUS</h6>
+								<ul class="footerSocialUl ">
+									<li class="footerSocialLi ">FACEBOOK</li>
+									<li class="footerSocialLi">INSTAGRAM</li>
+									<li class="footerSocialLi">LINKDIN</li>
+								</ul>
 
-			</div>
-		</div>
+							</div>
+						</div>
 
-		<p class="text-center ">&copy;
-			{{ 'now'|date('Y') }}
-			TURQUEZA JOAILLERIE.Tous droits réservés.</p>
-	</div>
-</footer>
+						<p class="text-center ">&copy;
+							{{ 'now'|date('Y') }}
+							TURQUEZA JOAILLERIE.Tous droits réservés.</p>
+					</div>
+				</footer>
 
 
 				{# <footer class="footer-custom">
-                <h2></h2>
-					<p>
-						&copy; 2017-2020 La Boutique Française<br/>
-						<small>La boutique 100% made in France<br/>
-							<a href="#">Privacy</a>
-							&middot;
-							<a href="#">Terms</a>
-						</small>
-					</p>
-				</footer> #}
+								                <h2></h2>
+													<p>
+														&copy; 2017-2020 La Boutique Française<br/>
+														<small>La boutique 100% made in France<br/>
+															<a href="#">Privacy</a>
+															&middot;
+															<a href="#">Terms</a>
+														</small>
+													</p>
+												</footer> #}
 			</main>
 			<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 			<script src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
