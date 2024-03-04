@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\Header;
 use App\Form\RegisterType;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Mime\Address;
@@ -35,7 +36,7 @@ class RegisterController extends AbstractController
     #[Route('/inscription', name: 'app_register')]
     public function index(Request $request, UserPasswordHasherInterface $encoder,MailerInterface $mailer): Response
     {
-
+        $headers = $this->entityManager->getRepository(Header::class)->findAll();
         $user = new User();
         $form = $this->createForm(RegisterType::class, $user);
         $notification = null;
@@ -85,6 +86,7 @@ class RegisterController extends AbstractController
             'controller_name' => 'RegisterController',
             'form' => $form->createView(),
             'notification' => $notification,
+            'headers' => $headers
         ]);
     }
 
