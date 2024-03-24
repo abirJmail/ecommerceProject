@@ -3,43 +3,111 @@
 {% block carousel %}{% endblock %}
 
 {% block content %}
-    <!-- Three columns of text below the carousel -->
-    <h3>Nos meilleures ventes</h3>
-    <p>Découvrez les articles les plus vendus.</p>
-    <div class="row">
-        {% for product in products %}
-            <div class="col-md-3">
-                {% include 'product/single_product.html.twig' %}
-            </div>
-        {% endfor %}
-    </div><!-- /.row -->
+	<div class="best">
+		<h2 class="title">Nos meilleures ventes</h2>
+		<hr class="featurette-divider">
+		<div class="isBest ">
+			<img class=" isBestIMG " src="/uploads/{{ products[0].illustration }}" alt="{{ products[0].name }}" class="img-fluid">
+			<div class="  isBestproduct row">
+				<p>Découvrez les articles les plus vendus.</p>
+				<p>Chaque bijou est unique et ne ressemble à aucun autre, que ce soit par son origine et son design.</p>
+				<div class=" isBestrow">
+					{% for product in products|slice(1, 2) %}
+						<div class="">
+							{% include 'product/single_product.html.twig' %}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		<div class="row btnMarkiting">
+			<div class="hrBtn"></div>
+			<a class="btn btn-lg headerBtnTitle right " href="" role="button">voir tout</a>
+		</div>
+	</div>
+	<!-- les nouveautés -->
+
+	<div class="new tracking-in-contract-bck">
+		<div class="custom-shape-divider-top-1693049623">
+			<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1200 120" preserveaspectratio="none">
+				<path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+				<path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+				<path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+			</svg>
+		</div>	
+		<h2 class="title">les nouveautés</h2>
+		<hr class="featurette-divider">
+
+		<p class="text-center">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.</p>
+		<div class=" newInrow">
+			{% for product in products|reverse|slice(0, 4) %}
+				<div class="">
+					{% include 'product/single_product.html.twig' %}
+				</div>
+			{% endfor %}
+		</div>
+
+		<div class="row btnMarkiting">
+			<div class="hrBtn"></div>
+			<a class="btn btn-lg headerBtnTitle right" href="" role="button">voir tout</a>
+		</div>
+		<div class="custom-shape-divider-bottom-1693049726">
+			<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1200 120" preserveaspectratio="none">
+				<path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+				<path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+				<path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+			</svg>
+		</div>
+	</div>
+	<!-- Nos Produits -->
+	<div class="produits">
+		<h2 class="title">Nos Produits</h2>
+		<hr class="featurette-divider">
+
+		<p class="text-center">Donec ullamcorper nulla non metus auctor fringilla.
+		</p>
+		<div class=" produitsrow">
+			{% for product in products|slice(0, 5) %}
+				<div class="">
+					{% include 'product/single_product.html.twig' %}
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<!-- START THE FEATURETTES -->
+	<div class="featurette ">
+		<div class="featuretteImg ">
+			<img src="{{ asset('assets/img/firstt.jpg') }}" class="img-fluid" alt="bijoutierre">
+		</div>
+		<div class="featurette-p">
+			<h2 class="featurette-heading">
+				<span class="text-muted">
+					la créativité
+				</span>est notre maître-mot
+			</h2>
+			<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
 
 
-    <!-- START THE FEATURETTES -->
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-        <div class="col-md-7">
-            <h2 class="featurette-heading">Une équipe de professionnel <span class="text-muted">au grand savoir-faire</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-            <img src="{{ asset('assets/img/first.jpg') }}" class="img-fluid" alt="Un savoir-faire Français">
-        </div>
-    </div>
-
-    <hr class="featurette-divider">
-
-    <div class="row featurette">
-        <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Venez nous rencontrer dans nos <span class="text-muted">boutiques en France.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5 order-md-1">
-            <img src="{{ asset('assets/img/second.jpg') }}" class="img-fluid" alt="Une boutique ouverte toute l'année">
-        </div>
-    </div>
-
-    <!-- /END THE FEATURETTES -->
-{% endblock %}
+		</div>
+	</div>
+	<div class="row btnMarkiting">
+		<div class="hrBtn"></div>
+		<a class="btn btn-lg headerBtnTitle right " href="" role="button">voir tout</a>
+	</div>
+	<div class=" featurette">
+		<div class="featurette-p ">
+			<h2 class="featurette-heading">Venez nous rencontrer dans nos
+				<span class="text-muted">boutiques en France.</span>
+			</h2>
+			<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+		</div>
+		<div class="featuretteImg ">
+			<img src="{{ asset('assets/img/secondd.jpg') }}" class="img-fluid" alt="Une boutique ouverte toute l'année">
+		</div>
+	</div>
+	<div class="row btnMarkiting">
+		<div class="hrBtn"></div>
+		<a class="btn btn-lg headerBtnTitle right " href="" role="button">voir tout</a>
+	</div>
+</div>
+<!-- /END THE FEATURETTES -->{% endblock %}

@@ -2,7 +2,7 @@
 
 {% block title %}Se connecter - Turquesa joaillerie{% endblock %}
 {% block content %}
-<form method="post">
+<form   method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
@@ -12,7 +12,8 @@
             You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
         </div>
     {% endif %}
-
+    
+<div class="login w-25 mx-auto">
     <h1 class="h3 mb-3 font-weight-normal">Merci de vous connecter</h1>
     <label for="inputEmail">Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" placeholder="Votre adresse email" required autofocus>
@@ -24,11 +25,15 @@
     >
  <hr>
             {# <button class="btn btn-lg btn-info btn-block mt-3" type="submit"> #}
-    <button class="btn btn-lg btn-primary" type="submit">
+    <button class="btn btn-lg headerBtnTitle w-75" type="submit">
                 Se connecter
             </button>
             <hr>
             {# <p class="text-center"><a href="{{ path('reset_password') }}">Mot de passe oublié</a> ?</p>#}
             <p class="text-center">Ou souhaitez-vous <a href="{{ path('app_register') }}">créer un compte</a> ?</p> 
+              </div>
         </form>
 {% endblock %}
+
+
+
