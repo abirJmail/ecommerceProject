@@ -22,7 +22,7 @@
 		</div>
 		<div class="row btnMarkiting">
 			<div class="hrBtn"></div>
-			<a class="btn btn-lg headerBtnTitle right " href="" role="button">voir tout</a>
+			<a class="btn btn-lg headerBtnTitle right " href="{{path('app_product')}}" role="button">voir tout</a>
 		</div>
 	</div>
 	<!-- les nouveautés -->
@@ -40,7 +40,7 @@
 
 		<p class="text-center">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.</p>
 		<div class=" newInrow">
-			{% for product in products|reverse|slice(0, 4) %}
+			{% for product in productsAll|reverse|slice(0, 4) %}
 				<div class="">
 					{% include 'product/single_product.html.twig' %}
 				</div>
@@ -49,7 +49,7 @@
 
 		<div class="row btnMarkiting">
 			<div class="hrBtn"></div>
-			<a class="btn btn-lg headerBtnTitle right" href="" role="button">voir tout</a>
+			<a class="btn btn-lg headerBtnTitle right" href="{{path('app_product')}}" role="button">voir tout</a>
 		</div>
 		<div class="custom-shape-divider-bottom-1693049726">
 			<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1200 120" preserveaspectratio="none">
@@ -67,11 +67,15 @@
 		<p class="text-center">Donec ullamcorper nulla non metus auctor fringilla.
 		</p>
 		<div class=" produitsrow">
-			{% for product in products|slice(0, 5) %}
+			{% for product in productsAll|slice(0, 6) %}
 				<div class="">
 					{% include 'product/single_product.html.twig' %}
 				</div>
 			{% endfor %}
+		</div>
+				<div class="row btnMarkiting">
+			<div class="hrBtn"></div>
+			<a class="btn btn-lg headerBtnTitle right " href="{{path('app_product')}}" role="button">voir tout</a>
 		</div>
 	</div>
 	<!-- START THE FEATURETTES -->
@@ -90,10 +94,6 @@
 
 		</div>
 	</div>
-	<div class="row btnMarkiting">
-		<div class="hrBtn"></div>
-		<a class="btn btn-lg headerBtnTitle right " href="" role="button">voir tout</a>
-	</div>
 	<div class=" featurette">
 		<div class="featurette-p ">
 			<h2 class="featurette-heading">Venez nous rencontrer dans nos
@@ -104,10 +104,6 @@
 		<div class="featuretteImg ">
 			<img src="{{ asset('assets/img/secondd.jpg') }}" class="img-fluid" alt="Une boutique ouverte toute l'année">
 		</div>
-	</div>
-	<div class="row btnMarkiting">
-		<div class="hrBtn"></div>
-		<a class="btn btn-lg headerBtnTitle right " href="" role="button">voir tout</a>
 	</div>
 </div>
 <!-- /END THE FEATURETTES -->{% endblock %}

@@ -44,7 +44,7 @@ class ContactType extends AbstractType
         ])
         // ->add('subject')
         ->add('subject', TextType::class, [
-            'label' => 'Subject',
+            'label' => 'objet',
             'attr' => [
                 'placeholder' => 'Choisissez un Sujet',
             ],
@@ -53,7 +53,7 @@ class ContactType extends AbstractType
             ]
         ])
 
-        ->add('content', TextareaType::class,[
+        ->add('Message', TextareaType::class,[
             'attr' => [
                 'class' => 'mb-3 form-control'
             ]
@@ -61,7 +61,7 @@ class ContactType extends AbstractType
         ->add('envoyer', SubmitType::class,[
                             'label' => 'envoyer',
                 'attr' => [
-                    'class' => 'mb-3 btn btn-dark'
+                    'class' => 'mb-3 btn headerBtnTitle'
                 ]
             
         ]);

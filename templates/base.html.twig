@@ -41,7 +41,7 @@
 	</head>
 	<body>
 		<header>
-			<nav class="navbar navbar-expand-md navbar-dark  ">
+			<nav class="navbar navbar-expand-md navbar-light ">
 				<a class="navbar-brand link " href="{{ path('app_home') }}">TURQUESA Joaillerie</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -67,19 +67,19 @@
 							<a class="link" href="{{ path('app_account') }}">
 								{{ app.user.firstname }}
 								{{ app.user.lastname }}
-								<svg class="navbar-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 24 24"><path fill="#170D02" d="M9.775 12q-.9 0-1.5-.675T7.8 9.75l.325-2.45q.2-1.425 1.3-2.363T12 4q1.475 0 2.575.938t1.3 2.362l.325 2.45q.125.9-.475 1.575t-1.5.675zM4 20v-2.8q0-.85.438-1.562T5.6 14.55q1.55-.775 3.15-1.162T12 13q1.65 0 3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2V20z"/></svg>
+								<svg class="navbar-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 24 24"><path fill="currentColor" d="M9.775 12q-.9 0-1.5-.675T7.8 9.75l.325-2.45q.2-1.425 1.3-2.363T12 4q1.475 0 2.575.938t1.3 2.362l.325 2.45q.125.9-.475 1.575t-1.5.675zM4 20v-2.8q0-.85.438-1.562T5.6 14.55q1.55-.775 3.15-1.162T12 13q1.65 0 3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2V20z"/></svg>
 							</a>
 
 						{% else %}
 
 							<a class="link" href="{{ path('app_login') }}">
-								<svg xmlns="http://www.w3.org/2000/svg" class="navbar-icon" width="32" height="32" viewbox="0 0 24 24"><path fill="#170D02" d="M9.775 12q-.9 0-1.5-.675T7.8 9.75l.325-2.45q.2-1.425 1.3-2.363T12 4q1.475 0 2.575.938t1.3 2.362l.325 2.45q.125.9-.475 1.575t-1.5.675zm0-2h4.45L13.9 7.6q-.1-.7-.637-1.15T12 6q-.725 0-1.263.45T10.1 7.6zM4 20v-2.8q0-.85.438-1.562T5.6 14.55q1.55-.775 3.15-1.162T12 13q1.65 0 3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2V20zm2-2h12v-.8q0-.275-.137-.5t-.363-.35q-1.35-.675-2.725-1.012T12 15q-1.4 0-2.775.338T6.5 16.35q-.225.125-.363.35T6 17.2zm6 0"/></svg>
+								<svg xmlns="http://www.w3.org/2000/svg" class="navbar-icon" width="32" height="32" viewbox="0 0 24 24"><path fill="currentColor" d="M9.775 12q-.9 0-1.5-.675T7.8 9.75l.325-2.45q.2-1.425 1.3-2.363T12 4q1.475 0 2.575.938t1.3 2.362l.325 2.45q.125.9-.475 1.575t-1.5.675zm0-2h4.45L13.9 7.6q-.1-.7-.637-1.15T12 6q-.725 0-1.263.45T10.1 7.6zM4 20v-2.8q0-.85.438-1.562T5.6 14.55q1.55-.775 3.15-1.162T12 13q1.65 0 3.25.388t3.15 1.162q.725.375 1.163 1.088T20 17.2V20zm2-2h12v-.8q0-.275-.137-.5t-.363-.35q-1.35-.675-2.725-1.012T12 15q-1.4 0-2.775.338T6.5 16.35q-.225.125-.363.35T6 17.2zm6 0"/></svg>
 							</a>
 						{% endif %}
 					</div>
 					<a class="link" href="{{ path('cart') }}">
 						<svg xmlns="http://www.w3.org/2000/svg" width="32" class="navbar-icon" height="32" viewbox="0 0 24 24">
-							<g fill="none" stroke="#170D02" stroke-width="2"><path stroke-linejoin="round" d="M4 9h16l-.835 9.181A2 2 0 0 1 17.174 20H6.826a2 2 0 0 1-1.991-1.819z"/><path stroke-linecap="round" d="M8 11V8a4 4 0 1 1 8 0v3"/></g>
+							<g fill="none" stroke="currentColor" stroke-width="2"><path stroke-linejoin="round" d="M4 9h16l-.835 9.181A2 2 0 0 1 17.174 20H6.826a2 2 0 0 1-1.991-1.819z"/><path stroke-linecap="round" d="M8 11V8a4 4 0 1 1 8 0v3"/></g>
 						</svg>
 
 					</a>
@@ -162,9 +162,12 @@
 							<div class="footer--social">
 								<h6>SUIVEZ NOUS</h6>
 								<ul class="footerSocialUl ">
-									<li class="footerSocialLi ">FACEBOOK</li>
-									<li class="footerSocialLi">INSTAGRAM</li>
-									<li class="footerSocialLi">LINKDIN</li>
+									<li class="footerSocialLi ">
+									<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 128 128"><path fill="currentColor" d="M116.42 5.07H11.58a6.5 6.5 0 0 0-6.5 6.5v104.85a6.5 6.5 0 0 0 6.5 6.5H68V77.29H52.66V59.5H68V46.38c0-15.22 9.3-23.51 22.88-23.51a126 126 0 0 1 13.72.7v15.91h-9.39c-7.39 0-8.82 3.51-8.82 8.66V59.5H104l-2.29 17.79H86.39v45.64h30a6.51 6.51 0 0 0 6.5-6.5V11.58a6.5 6.5 0 0 0-6.47-6.51"/></svg></li>
+									<li class="footerSocialLi">
+									<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 1000 1000"><path fill="currentColor" d="M603.575 510.854c0-54.044-44.172-98.02-98.463-98.02c-54.285 0-98.455 43.977-98.455 98.02c0 54.058 44.17 98.026 98.455 98.026c54.291 0 98.463-43.968 98.463-98.026M749.855.602H250.142C112.465.602.456 112.124.456 249.199v69.266h367.413c38.769-27.496 86.118-43.739 137.243-43.739c51.124 0 98.48 16.243 137.251 43.739H999.54v-69.266C999.54 112.123 887.531.602 749.855.602m101.12 236.435c0 15.191-12.48 27.622-27.743 27.622h-85.72c-15.261 0-27.743-12.431-27.743-27.622v-85.352c0-15.19 12.481-27.622 27.743-27.622h85.72c15.262 0 27.743 12.43 27.743 27.622zM742.287 510.854c0 130.215-106.402 236.133-237.176 236.133c-130.778 0-237.17-105.918-237.17-236.133c0-35.848 8.11-69.845 22.532-100.318H.456v340.263c0 137.085 112.009 248.597 249.686 248.597h499.714c137.676 0 249.685-111.513 249.685-248.597V410.536H719.755c14.422 30.473 22.532 64.47 22.532 100.318"/></svg></li>
+									<li class="footerSocialLi">
+									<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 128 128"><path fill="currentColor" d="M116 3H12a8.91 8.91 0 0 0-9 8.8v104.42a8.91 8.91 0 0 0 9 8.78h104a8.93 8.93 0 0 0 9-8.81V11.77A8.93 8.93 0 0 0 116 3M39.17 107H21.06V48.73h18.11zm-9-66.21a10.5 10.5 0 1 1 10.49-10.5a10.5 10.5 0 0 1-10.54 10.48zM107 107H88.89V78.65c0-6.75-.12-15.44-9.41-15.44s-10.87 7.36-10.87 15V107H50.53V48.73h17.36v8h.24c2.42-4.58 8.32-9.41 17.13-9.41C103.6 47.28 107 59.35 107 75z"/></svg></li>
 								</ul>
 
 							</div>
@@ -183,7 +186,7 @@
 
 				function placeFooter() {
 if ($(document.body).height() < $(window).height()) {
-$("footer").css({position: "fixed", bottom: "0px"});
+$("footer").css({position: "fixed", bottom: "0px", width:100%});
 } else {
 $("footer").css({position: ""});
 }

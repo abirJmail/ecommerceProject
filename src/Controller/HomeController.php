@@ -20,12 +20,14 @@ class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
     public function index()
     {
+        $productsAll = $this->entityManager->getRepository(Product::class)->findAll();
         $products = $this->entityManager->getRepository(Product::class)->findByIsBest(1);
         $headers = $this->entityManager->getRepository(Header::class)->findAll();
 
         return $this->render('home/index.html.twig', [
             'products' => $products,
-            'headers' => $headers
+            'headers' => $headers,
+            'productsAll' =>$productsAll,
         ]);
     }
 }
